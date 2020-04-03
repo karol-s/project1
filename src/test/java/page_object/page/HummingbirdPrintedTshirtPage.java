@@ -3,13 +3,18 @@ package page_object.page;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
+
 public class HummingbirdPrintedTshirtPage {
 
+    private WebDriver driver;
+
     public HummingbirdPrintedTshirtPage(WebDriver driver) {
+        this.driver = driver;
         PageFactory.initElements(driver, this);
     }
 
@@ -22,7 +27,7 @@ public class HummingbirdPrintedTshirtPage {
     @FindBy(id = "quantity_wanted")
     private WebElement quantityWanted;
 
-    @FindBy (xpath = "//button[@data-button-action='add-to-cart']")
+    @FindBy (xpath = "//div//div//div/button[@data-button-action='add-to-cart']")
     private WebElement submitButton;
 
 
@@ -44,6 +49,8 @@ public class HummingbirdPrintedTshirtPage {
     public void clickSubmitButton() {
         submitButton.click();
 
+        Actions act = new Actions(driver);
+        act.doubleClick(submitButton).perform();
     }
 
 }

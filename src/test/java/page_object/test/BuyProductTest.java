@@ -39,24 +39,23 @@ public class BuyProductTest {
         new MainPage(driver).chooseWantedProduct(wantedProduct);
     }
 
-
     @And("Check discount is equals to (.*)")
     public void checkDiscountIsEqualsToHowManyProcent(String discount) {
         new HummingbirdPrintedTshirtPage(driver).checkDiscount(discount);
-
     }
 
     @And("User chooses (.*) size")
     public void userChoosesMSize(String size) {
         new HummingbirdPrintedTshirtPage(driver).selectSize(size);
-
     }
 
-    @And("User chooses (.*) pieces and submit")
-    public void userChoosesHowManyPiecesAndSubmit(String pieces) {
+    @And("User chooses (.*) pieces")
+    public void userChoosesHowManyPieces(String pieces) {
         new HummingbirdPrintedTshirtPage(driver).selectQuantity(pieces);
+    }
+
+    @And("User clicks submit")
+    public void userClicksSubmit() {
         new HummingbirdPrintedTshirtPage(driver).clickSubmitButton();
     }
-
-
 }

@@ -30,7 +30,11 @@ formatter.step({
   "keyword": "And "
 });
 formatter.step({
-  "name": "User chooses \u003cquantity\u003e pieces and submit",
+  "name": "User chooses \u003cquantity\u003e pieces",
+  "keyword": "And "
+});
+formatter.step({
+  "name": "User clicks submit",
   "keyword": "And "
 });
 formatter.examples({
@@ -50,8 +54,8 @@ formatter.examples({
       "cells": [
         "Hummingbird Printed T-shirt",
         "SAVE 20%",
-        "M",
-        "1"
+        "L",
+        "3"
       ]
     }
   ]
@@ -102,7 +106,7 @@ formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "User chooses M size",
+  "name": "User chooses L size",
   "keyword": "And "
 });
 formatter.match({
@@ -112,11 +116,21 @@ formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "User chooses 1 pieces and submit",
+  "name": "User chooses 3 pieces",
   "keyword": "And "
 });
 formatter.match({
-  "location": "BuyProductTest.userChoosesHowManyPiecesAndSubmit(String)"
+  "location": "BuyProductTest.userChoosesHowManyPieces(String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "User clicks submit",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "BuyProductTest.userClicksSubmit()"
 });
 formatter.result({
   "status": "passed"

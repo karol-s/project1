@@ -6,7 +6,8 @@ Feature: Buy product
     And User chooses <one product> from products
     And Check discount is equals to <SAVE howManyProcent>
     And User chooses <preffered> size
-    And User chooses <quantity> pieces and submit
+    And User chooses <quantity> pieces
+    And User clicks submit
     Examples:
       | one product                 | SAVE howManyProcent | preffered | quantity |
-      | Hummingbird Printed T-shirt | SAVE 20%            | M         | 1        |
+      | Hummingbird Printed T-shirt | SAVE 20%            | L         | 3        |
